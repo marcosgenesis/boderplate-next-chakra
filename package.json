@@ -2,6 +2,18 @@
   "name": "boderplate-frontend",
   "version": "0.1.0",
   "private": true,
+  "huskey": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --fix",
+      "cross-env CI=true yarn test --bail --findRelatedTests",
+      "git add"
+    ]
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -21,8 +33,11 @@
   "devDependencies": {
     "@types/node": "^16.11.4",
     "@types/react": "^17.0.31",
+    "cross-env": "^7.0.3",
     "eslint": "8.0.1",
     "eslint-config-next": "11.1.2",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.3",
     "typescript": "^4.4.4"
   }
 }

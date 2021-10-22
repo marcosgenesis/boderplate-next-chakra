@@ -2,7 +2,7 @@
   "name": "boderplate-frontend",
   "version": "0.1.0",
   "private": true,
-  "huskey": {
+  "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
